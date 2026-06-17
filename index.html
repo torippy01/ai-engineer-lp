@@ -457,16 +457,13 @@
       btnSpinner.classList.remove('hidden');
 
       try {
-        const res = await fetch(GAS_URL, {
+        await fetch(GAS_URL, {
           method: 'POST',
+          mode: 'no-cors', // GASはCORSヘッダーを返せないため no-cors を使用（レスポンスはopaque）
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
-          // GASはCORSのため no-cors を使う場合はレスポンスが opaque になることに注意
-          // mode: 'no-cors',  // GAS側で CORS 対応済みなら不要
         });
-
-        // GAS が CORS 対応済みで 2xx を返す想定
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        // no-cors では res.ok が取れないため、例外なく完了したら成功扱い
 
         // サンクス表示に切り替え
         container.innerHTML = `
