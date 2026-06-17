@@ -460,7 +460,8 @@
         await fetch(GAS_URL, {
           method: 'POST',
           mode: 'no-cors', // GASはCORSヘッダーを返せないため no-cors を使用（レスポンスはopaque）
-          headers: { 'Content-Type': 'application/json' },
+          // text/plain にすることでプリフライト(OPTIONS)を回避。GAS側は e.postData.contents でJSON文字列として受け取る
+          headers: { 'Content-Type': 'text/plain' },
           body: JSON.stringify(payload),
         });
         // no-cors では res.ok が取れないため、例外なく完了したら成功扱い
