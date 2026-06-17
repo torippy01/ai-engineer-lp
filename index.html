@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>AIエンジニア募集 | あなたのスキルを最大限に活かせる打席がここにあります</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e3a8a',
+              900: '#172554',
+            }
+          },
+          fontFamily: {
+            sans: ['"Hiragino Sans"', '"Hiragino Kaku Gothic ProN"', 'Meiryo', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ========================================
+       GAS送信先URL — ここだけ書き換えてください
+       ======================================== */
+    /* JSブロック内に定数として定義しています（下部参照） */
+
+    /* スクロールアニメーション用 */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ヒーロー画像オーバーレイ */
+    .hero-overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(23, 37, 84, 0.55) 0%,
+        rgba(23, 37, 84, 0.75) 60%,
+        rgba(23, 37, 84, 0.92) 100%
+      );
+    }
+
+    /* ラジオボタンカスタム */
+    .skill-label input[type="radio"] {
+      accent-color: #2563eb;
+    }
+    .skill-label:has(input:checked) {
+      background-color: #dbeafe;
+      border-color: #2563eb;
+      color: #1e3a8a;
+      font-weight: 600;
+    }
+
+    /* フォーカスリング統一 */
+    input:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 font-sans antialiased">
+
+  <!-- =============================================
+       HERO SECTION
+       ============================================= -->
+  <section class="relative min-h-[88svh] flex flex-col justify-end overflow-hidden">
+
+    <!-- 背景画像 -->
+    <img
+      src="./hero.png"
+      alt="AIエンジニア募集ヒーロー画像"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      loading="eager"
+    />
+
+    <!-- オーバーレイ -->
+    <div class="hero-overlay absolute inset-0"></div>
+
+    <!-- テキストコンテンツ -->
+    <div class="relative z-10 px-5 pb-14 pt-10 max-w-xl mx-auto w-full">
+
+      <!-- ラベル -->
+      <span class="inline-block bg-blue-600 text-white text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
+        AI Engineer Recruiting
+      </span>
+
+      <!-- キャッチコピー -->
+      <h1 class="text-white text-2xl sm:text-3xl font-bold leading-snug mb-5">
+        データ分析から生成AIまで。<br>
+        あなたのスキルを最大限に<br>
+        活かせる<span class="text-blue-300">「打席」</span>がここにあります。
+      </h1>
+
+      <p class="text-blue-100 text-sm leading-relaxed mb-8">
+        MLOps・LLM・データパイプライン——最前線のプロジェクトで、あなたの技術が社会を動かします。
+        まずはカジュアルにお話しましょう。
+      </p>
+
+      <!-- CTAスクロールボタン -->
+      <a
+        href="#form"
+        class="block w-full text-center bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-base py-4 rounded-xl shadow-lg transition-colors duration-200"
+      >
+        まずはカジュアルに話を聞いてみる ↓
+      </a>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       PROJECTS SECTION
+       ============================================= -->
+  <section class="bg-gray-50 py-14 px-5">
+    <div class="max-w-xl mx-auto">
+
+      <div class="fade-in text-center mb-10">
+        <span class="text-blue-600 text-sm font-semibold tracking-wider uppercase">Current Projects</span>
+        <h2 class="text-gray-900 text-xl font-bold mt-2">稼働中のプロジェクト例</h2>
+        <p class="text-gray-500 text-sm mt-2">あなたの専門性が直接プロダクトに刺さる環境があります。</p>
+      </div>
+
+      <!-- プロジェクトカード一覧 -->
+      <div class="space-y-4">
+
+        <!-- Card 1 -->
+        <div class="fade-in bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-700 text-lg font-bold">
+              ⚙️
+            </div>
+            <div>
+              <span class="inline-block text-xs bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded-full mb-1">MLOps</span>
+              <h3 class="text-gray-900 font-bold text-base leading-snug">大規模MLOpsプラットフォーム構築</h3>
+              <p class="text-gray-500 text-sm mt-1 leading-relaxed">
+                Kubeflow／MLflow を基盤に、モデルのCI/CDパイプラインとドリフト検知を一気通貫で整備。本番モデルを月次ではなく週次でデプロイできる体制を目指しています。
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">Python</span>
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">Kubernetes</span>
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">MLflow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="fade-in bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-700 text-lg font-bold">
+              🤖
+            </div>
+            <div>
+              <span class="inline-block text-xs bg-indigo-50 text-indigo-700 font-semibold px-2 py-0.5 rounded-full mb-1">生成AI</span>
+              <h3 class="text-gray-900 font-bold text-base leading-snug">LLMファインチューニング＆RAGシステム開発</h3>
+              <p class="text-gray-500 text-sm mt-1 leading-relaxed">
+                社内ドメイン知識を持たせた業務特化LLMの構築。LoRA によるファインチューニングと RAG アーキテクチャを組み合わせ、ハルシネーションを最小化する設計に取り組んでいます。
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">LLM</span>
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">RAG</span>
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">LangChain</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="fade-in bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-cyan-100 rounded-xl flex items-center justify-center text-cyan-700 text-lg font-bold">
+              🔁
+            </div>
+            <div>
+              <span class="inline-block text-xs bg-cyan-50 text-cyan-700 font-semibold px-2 py-0.5 rounded-full mb-1">データエンジニアリング</span>
+              <h3 class="text-gray-900 font-bold text-base leading-snug">リアルタイムデータ解析パイプライン刷新</h3>
+              <p class="text-gray-500 text-sm mt-1 leading-relaxed">
+                Kafka + dbt + BigQuery の構成で、バッチ依存から脱却したストリーミングアーキテクチャへ移行中。ダッシュボードのレイテンシを数時間から数秒に短縮するプロジェクトです。
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">Kafka</span>
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">dbt</span>
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">BigQuery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="fade-in bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 text-lg font-bold">
+              📊
+            </div>
+            <div>
+              <span class="inline-block text-xs bg-emerald-50 text-emerald-700 font-semibold px-2 py-0.5 rounded-full mb-1">データサイエンス</span>
+              <h3 class="text-gray-900 font-bold text-base leading-snug">需要予測モデルの高度化と意思決定支援</h3>
+              <p class="text-gray-500 text-sm mt-1 leading-relaxed">
+                時系列予測（Prophet / LightGBM）を用いた在庫最適化モデルを運用中。Next Action まで提示するインタラクティブな分析基盤へと発展させる第2フェーズを開始します。
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">LightGBM</span>
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">Prophet</span>
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">Looker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /space-y-4 -->
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       MERIT SECTION
+       ============================================= -->
+  <section class="bg-brand-800 py-12 px-5" style="background-color: #1e3a8a;">
+    <div class="max-w-xl mx-auto">
+      <div class="fade-in text-center mb-8">
+        <h2 class="text-white text-xl font-bold">参画するメリット</h2>
+      </div>
+      <ul class="fade-in space-y-4">
+        <li class="flex items-start gap-3 text-blue-100 text-sm leading-relaxed">
+          <span class="text-blue-300 text-lg mt-0.5 flex-shrink-0">✓</span>
+          <span><strong class="text-white">最先端の技術スタック</strong>——LLM・MLOps・ストリーミング処理など、市場価値が高い領域でハンズオン経験を積めます。</span>
+        </li>
+        <li class="flex items-start gap-3 text-blue-100 text-sm leading-relaxed">
+          <span class="text-blue-300 text-lg mt-0.5 flex-shrink-0">✓</span>
+          <span><strong class="text-white">スキルに見合った報酬設計</strong>——スキルシートと実績を正当に評価。副業・フリーランス歓迎。</span>
+        </li>
+        <li class="flex items-start gap-3 text-blue-100 text-sm leading-relaxed">
+          <span class="text-blue-300 text-lg mt-0.5 flex-shrink-0">✓</span>
+          <span><strong class="text-white">フルリモート・フレキシブル稼働</strong>——コアタイムなし。成果で評価される環境です。</span>
+        </li>
+        <li class="flex items-start gap-3 text-blue-100 text-sm leading-relaxed">
+          <span class="text-blue-300 text-lg mt-0.5 flex-shrink-0">✓</span>
+          <span><strong class="text-white">まずは面談から</strong>——ノルマなし・強引なクロージングなし。合わなければ断っていただいて構いません。</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       FORM SECTION
+       ============================================= -->
+  <section id="form" class="bg-white py-14 px-5">
+    <div class="max-w-xl mx-auto">
+
+      <div class="fade-in text-center mb-8">
+        <span class="text-blue-600 text-sm font-semibold tracking-wider uppercase">Contact</span>
+        <h2 class="text-gray-900 text-xl font-bold mt-2">カジュアル面談のお申し込み</h2>
+        <p class="text-gray-500 text-sm mt-2">30秒で入力完了。担当者より2営業日以内にご連絡します。</p>
+      </div>
+
+      <!-- フォーム本体 / サンクスメッセージを切り替えるコンテナ -->
+      <div id="form-container" class="fade-in">
+
+        <form id="contact-form" novalidate class="space-y-5">
+
+          <!-- 氏名 -->
+          <div>
+            <label for="name" class="block text-sm font-semibold text-gray-700 mb-1.5">
+              お名前 <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              autocomplete="name"
+              placeholder="山田 太郎"
+              class="w-full border border-gray-300 rounded-xl px-4 py-3 text-base text-gray-800 placeholder-gray-400 transition-shadow duration-200"
+            />
+            <p id="name-error" class="text-red-500 text-xs mt-1 hidden">お名前を入力してください。</p>
+          </div>
+
+          <!-- メールアドレス -->
+          <div>
+            <label for="email" class="block text-sm font-semibold text-gray-700 mb-1.5">
+              メールアドレス <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              inputmode="email"
+              placeholder="taro.yamada@example.com"
+              class="w-full border border-gray-300 rounded-xl px-4 py-3 text-base text-gray-800 placeholder-gray-400 transition-shadow duration-200"
+            />
+            <p id="email-error" class="text-red-500 text-xs mt-1 hidden">正しいメールアドレスを入力してください。</p>
+          </div>
+
+          <!-- 得意領域（ラジオボタン） -->
+          <div>
+            <p class="block text-sm font-semibold text-gray-700 mb-2.5">
+              最も得意な技術・領域 <span class="text-red-500">*</span>
+            </p>
+            <div class="space-y-2.5" id="skill-group">
+              <!-- ラジオ選択肢 -->
+              <label class="skill-label flex items-center gap-3 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer transition-colors duration-150">
+                <input type="radio" name="skill" value="データサイエンス" class="w-4 h-4 flex-shrink-0" />
+                <span class="text-sm text-gray-700">データサイエンス</span>
+              </label>
+              <label class="skill-label flex items-center gap-3 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer transition-colors duration-150">
+                <input type="radio" name="skill" value="ML・MLOps" class="w-4 h-4 flex-shrink-0" />
+                <span class="text-sm text-gray-700">ML・MLOps</span>
+              </label>
+              <label class="skill-label flex items-center gap-3 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer transition-colors duration-150">
+                <input type="radio" name="skill" value="生成AI活用" class="w-4 h-4 flex-shrink-0" />
+                <span class="text-sm text-gray-700">生成AI活用</span>
+              </label>
+              <label class="skill-label flex items-center gap-3 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer transition-colors duration-150">
+                <input type="radio" name="skill" value="データ分析" class="w-4 h-4 flex-shrink-0" />
+                <span class="text-sm text-gray-700">データ分析</span>
+              </label>
+              <label class="skill-label flex items-center gap-3 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer transition-colors duration-150">
+                <input type="radio" name="skill" value="その他" class="w-4 h-4 flex-shrink-0" />
+                <span class="text-sm text-gray-700">その他</span>
+              </label>
+            </div>
+            <p id="skill-error" class="text-red-500 text-xs mt-1 hidden">得意な領域を選択してください。</p>
+          </div>
+
+          <!-- エラーメッセージ（サーバーエラー用） -->
+          <p id="server-error" class="text-red-600 text-sm bg-red-50 border border-red-200 rounded-xl px-4 py-3 hidden">
+            送信中にエラーが発生しました。しばらく経ってから再度お試しください。
+          </p>
+
+          <!-- 送信ボタン -->
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold text-base py-4 rounded-xl shadow-md transition-colors duration-200 flex items-center justify-center gap-2"
+          >
+            <span id="btn-text">まずはカジュアルに話を聞いてみる</span>
+            <!-- ローディングスピナー（送信中に表示） -->
+            <svg id="btn-spinner" class="hidden animate-spin w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"></path>
+            </svg>
+          </button>
+
+          <p class="text-center text-gray-400 text-xs">
+            個人情報は採用目的のみに使用し、第三者への提供は行いません。
+          </p>
+
+        </form>
+
+      </div><!-- /#form-container -->
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       FOOTER
+       ============================================= -->
+  <footer class="bg-gray-900 py-8 px-5 text-center">
+    <p class="text-gray-500 text-xs">&copy; 2026 PonTech Lab, Inc. All rights reserved.</p>
+  </footer>
+
+
+  <!-- =============================================
+       JAVASCRIPT
+       ============================================= -->
+  <script>
+    // ========================================
+    // ▼▼▼ GAS ウェブアプリURLをここに設定 ▼▼▼
+    const GAS_URL = "YOUR_GAS_WEBAPP_URL_HERE";
+    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    // ========================================
+
+    // --- Intersection Observer によるフェードインアニメーション ---
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach((el) => observer.observe(el));
+
+    // --- フォーム送信処理 ---
+    const form        = document.getElementById('contact-form');
+    const submitBtn   = document.getElementById('submit-btn');
+    const btnText     = document.getElementById('btn-text');
+    const btnSpinner  = document.getElementById('btn-spinner');
+    const serverError = document.getElementById('server-error');
+    const container   = document.getElementById('form-container');
+
+    // バリデーションヘルパー
+    function showError(id, show) {
+      document.getElementById(id).classList.toggle('hidden', !show);
+    }
+
+    function validateForm(data) {
+      let valid = true;
+
+      const nameOk = data.name.trim().length > 0;
+      showError('name-error', !nameOk);
+      if (!nameOk) valid = false;
+
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim());
+      showError('email-error', !emailOk);
+      if (!emailOk) valid = false;
+
+      const skillOk = data.skill !== '';
+      showError('skill-error', !skillOk);
+      if (!skillOk) valid = false;
+
+      return valid;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      serverError.classList.add('hidden');
+
+      const nameEl  = document.getElementById('name');
+      const emailEl = document.getElementById('email');
+      const skillEl = document.querySelector('input[name="skill"]:checked');
+
+      const payload = {
+        name:  nameEl.value,
+        email: emailEl.value,
+        skill: skillEl ? skillEl.value : '',
+      };
+
+      if (!validateForm(payload)) return;
+
+      // 送信中UI
+      submitBtn.disabled = true;
+      btnText.textContent = '送信中...';
+      btnSpinner.classList.remove('hidden');
+
+      try {
+        const res = await fetch(GAS_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          // GASはCORSのため no-cors を使う場合はレスポンスが opaque になることに注意
+          // mode: 'no-cors',  // GAS側で CORS 対応済みなら不要
+        });
+
+        // GAS が CORS 対応済みで 2xx を返す想定
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        // サンクス表示に切り替え
+        container.innerHTML = `
+          <div class="text-center py-10 px-4">
+            <div class="flex justify-center mb-5">
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-gray-900 text-xl font-bold mb-3">送信が完了しました！</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              追って担当者よりご連絡いたします。<br>
+              2営業日以内にメールにてご連絡しますので、<br>しばらくお待ちください。
+            </p>
+          </div>
+        `;
+
+      } catch (err) {
+        console.error('送信エラー:', err);
+        serverError.classList.remove('hidden');
+
+        // ボタンを元に戻す
+        submitBtn.disabled = false;
+        btnText.textContent = 'まずはカジュアルに話を聞いてみる';
+        btnSpinner.classList.add('hidden');
+      }
+    });
+
+    // ラジオボタン変更時にエラーを消す
+    document.getElementById('skill-group').addEventListener('change', () => {
+      showError('skill-error', false);
+    });
+  </script>
+
+</body>
+</html>
