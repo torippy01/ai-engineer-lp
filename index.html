@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
-  <title>AIエンジニア募集 | あなたのスキルを最大限に活かせる打席がここにあります</title>
+  <title>AIエンジニア案件紹介 | 生成AI・MLOps 高単価案件 | 株式会社PonTech Lab</title>
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -33,12 +32,6 @@
   </script>
 
   <style>
-    /* ========================================
-       GAS送信先URL — ここだけ書き換えてください
-       ======================================== */
-    /* JSブロック内に定数として定義しています（下部参照） */
-
-    /* スクロールアニメーション用 */
     .fade-in {
       opacity: 0;
       transform: translateY(24px);
@@ -49,34 +42,24 @@
       transform: translateY(0);
     }
 
-    /* ヒーロー画像オーバーレイ */
     .hero-overlay {
       background: linear-gradient(
         to bottom,
-        rgba(23, 37, 84, 0.55) 0%,
-        rgba(23, 37, 84, 0.75) 60%,
-        rgba(23, 37, 84, 0.92) 100%
+        rgba(23, 37, 84, 0.50) 0%,
+        rgba(23, 37, 84, 0.72) 55%,
+        rgba(23, 37, 84, 0.93) 100%
       );
     }
 
-    /* ラジオボタンカスタム */
-    .skill-label input[type="radio"] {
-      accent-color: #2563eb;
-    }
-    .skill-label:has(input:checked) {
-      background-color: #dbeafe;
-      border-color: #2563eb;
-      color: #1e3a8a;
-      font-weight: 600;
-    }
-    .skill-label input[type="checkbox"] {
-      accent-color: #2563eb;
+    .price-header {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
     }
 
-    /* フォーカスリング統一 */
-    input:focus, textarea:focus {
+    input:focus,
+    textarea:focus,
+    select:focus {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.22);
     }
   </style>
 </head>
@@ -88,44 +71,39 @@
        ============================================= -->
   <section class="relative min-h-[88svh] flex flex-col justify-end overflow-hidden">
 
-    <!-- 背景画像 -->
     <img
       src="./hero.png"
-      alt="AIエンジニア募集ヒーロー画像"
+      alt="AIエンジニア案件紹介 ヒーロー画像"
       class="absolute inset-0 w-full h-full object-cover object-center"
       loading="eager"
     />
-
-    <!-- オーバーレイ -->
     <div class="hero-overlay absolute inset-0"></div>
 
-    <!-- テキストコンテンツ -->
     <div class="relative z-10 px-5 pb-14 pt-10 max-w-xl mx-auto w-full">
 
-      <!-- ラベル -->
       <span class="inline-block bg-blue-600 text-white text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
         AI Engineer Recruiting
       </span>
 
-      <!-- キャッチコピー -->
       <h1 class="text-white text-2xl sm:text-3xl font-bold leading-snug mb-5">
-        データ分析から生成AIまで。<br>
-        あなたのスキルを最大限に<br>
-        活かせる<span class="text-blue-300">「打席」</span>がここにあります。
+        データの前処理ばかりの<br>
+        環境から抜け出しませんか？<br>
+        <span class="text-blue-300">生成AI・MLOps</span> の高単価・<br>
+        モダン環境案件、多数稼働中。
       </h1>
 
       <p class="text-blue-100 text-sm leading-relaxed mb-8">
-        MLOps・LLM・データパイプライン——最前線のプロジェクトで、あなたの技術が社会を動かします。
-        まずはカジュアルにお話しましょう。
+        履歴書不要。まずは現在稼働中の非公開案件リストを覗いてみませんか？<br>
+        テクノロジーの激動を確かな前進に——PonTech Lab があなたのキャリアの道しるべになります。
       </p>
 
-      <!-- CTAスクロールボタン -->
       <a
         href="#form"
         class="block w-full text-center bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-base py-4 rounded-xl shadow-lg transition-colors duration-200"
       >
-        まずはカジュアルに話を聞いてみる ↓
+        カジュアルに案件情報を見てみる →
       </a>
+
     </div>
   </section>
 
@@ -138,128 +116,168 @@
 
       <div class="fade-in text-center mb-10">
         <span class="text-blue-600 text-sm font-semibold tracking-wider uppercase">Current Projects</span>
-        <h2 class="text-gray-900 text-xl font-bold mt-2">稼働中のプロジェクト例</h2>
-        <p class="text-gray-500 text-sm mt-2">あなたの専門性が直接プロダクトに刺さる環境があります。</p>
+        <h2 class="text-gray-900 text-xl font-bold mt-2">稼働中の案件例（一部抜粋）</h2>
+        <p class="text-gray-500 text-sm mt-2">非公開案件を含む詳細リストは、お問い合わせ後にご案内します。</p>
       </div>
 
-      <!-- プロジェクトカード一覧 -->
-      <div class="space-y-4">
+      <div class="space-y-5">
 
-        <!-- Card 1 -->
-        <div class="fade-in bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-700 text-lg font-bold">
-              ⚙️
+        <!-- Card A: 生成AI SaaS -->
+        <div class="fade-in bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="price-header px-5 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-blue-200 text-xs font-semibold tracking-wide">生成AI / バックエンド</span>
             </div>
-            <div>
-              <span class="inline-block text-xs bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded-full mb-1">MLOps</span>
-              <h3 class="text-gray-900 font-bold text-base leading-snug">大規模MLOpsプラットフォーム構築</h3>
-              <p class="text-gray-500 text-sm mt-1 leading-relaxed">
-                Kubeflow／MLflow を基盤に、モデルのCI/CDパイプラインとドリフト検知を一気通貫で整備。本番モデルを月次ではなく週次でデプロイできる体制を目指しています。
-              </p>
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">Python</span>
-                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">Kubernetes</span>
-                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">MLflow</span>
-              </div>
+            <span class="text-white font-bold text-xl tracking-tight">月額 100万円〜</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-gray-900 font-bold text-base leading-snug mb-3">
+              生成AI活用SaaSのバックエンド・LLM組み込み
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="inline-flex items-center gap-1.5 text-xs bg-emerald-50 text-emerald-700 font-semibold px-3 py-1 rounded-full border border-emerald-100">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                フルリモート
+              </span>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">Python</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">AWS</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">Snowflake</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">LangChain</span>
             </div>
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="fade-in bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-700 text-lg font-bold">
-              🤖
+        <!-- Card B: エッジAI / MLOps -->
+        <div class="fade-in bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="price-header px-5 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-blue-200 text-xs font-semibold tracking-wide">エッジAI / MLOps</span>
             </div>
-            <div>
-              <span class="inline-block text-xs bg-indigo-50 text-indigo-700 font-semibold px-2 py-0.5 rounded-full mb-1">生成AI</span>
-              <h3 class="text-gray-900 font-bold text-base leading-snug">LLMファインチューニング＆RAGシステム開発</h3>
-              <p class="text-gray-500 text-sm mt-1 leading-relaxed">
-                社内ドメイン知識を持たせた業務特化LLMの構築。LoRA によるファインチューニングと RAG アーキテクチャを組み合わせ、ハルシネーションを最小化する設計に取り組んでいます。
-              </p>
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">LLM</span>
-                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">RAG</span>
-                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">LangChain</span>
-              </div>
+            <span class="text-white font-bold text-xl tracking-tight">月額 90万円〜</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-gray-900 font-bold text-base leading-snug mb-3">
+              大手製造業向けエッジAIモデル開発・MLOps構築
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="inline-flex items-center gap-1.5 text-xs bg-amber-50 text-amber-700 font-semibold px-3 py-1 rounded-full border border-amber-100">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                週1出社・週4リモート
+              </span>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">Python</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">PyTorch</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">Docker</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">Kubernetes</span>
             </div>
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="fade-in bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-cyan-100 rounded-xl flex items-center justify-center text-cyan-700 text-lg font-bold">
-              🔁
+        <!-- Card C: データ分析基盤 -->
+        <div class="fade-in bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="price-header px-5 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-blue-200 text-xs font-semibold tracking-wide">データ基盤 / アナリティクス</span>
             </div>
-            <div>
-              <span class="inline-block text-xs bg-cyan-50 text-cyan-700 font-semibold px-2 py-0.5 rounded-full mb-1">データエンジニアリング</span>
-              <h3 class="text-gray-900 font-bold text-base leading-snug">リアルタイムデータ解析パイプライン刷新</h3>
-              <p class="text-gray-500 text-sm mt-1 leading-relaxed">
-                Kafka + dbt + BigQuery の構成で、バッチ依存から脱却したストリーミングアーキテクチャへ移行中。ダッシュボードのレイテンシを数時間から数秒に短縮するプロジェクトです。
-              </p>
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">Kafka</span>
-                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">dbt</span>
-                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">BigQuery</span>
-              </div>
+            <span class="text-white font-bold text-xl tracking-tight">月額 110万円〜</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-gray-900 font-bold text-base leading-snug mb-3">
+              大規模データ分析基盤の設計・構築
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="inline-flex items-center gap-1.5 text-xs bg-emerald-50 text-emerald-700 font-semibold px-3 py-1 rounded-full border border-emerald-100">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                フルリモート
+              </span>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">SQL</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">BigQuery</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">dbt</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">Python</span>
             </div>
           </div>
         </div>
 
-        <!-- Card 4 -->
-        <div class="fade-in bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 text-lg font-bold">
-              📊
-            </div>
-            <div>
-              <span class="inline-block text-xs bg-emerald-50 text-emerald-700 font-semibold px-2 py-0.5 rounded-full mb-1">データサイエンス</span>
-              <h3 class="text-gray-900 font-bold text-base leading-snug">需要予測モデルの高度化と意思決定支援</h3>
-              <p class="text-gray-500 text-sm mt-1 leading-relaxed">
-                時系列予測（Prophet / LightGBM）を用いた在庫最適化モデルを運用中。Next Action まで提示するインタラクティブな分析基盤へと発展させる第2フェーズを開始します。
-              </p>
-              <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">LightGBM</span>
-                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">Prophet</span>
-                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">Looker</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
 
-      </div><!-- /space-y-4 -->
+      <p class="fade-in text-center text-gray-400 text-xs mt-6">
+        ※上記は稼働中案件の一部です。非公開案件を含む詳細リストはお問い合わせ後にご案内します。
+      </p>
+
     </div>
   </section>
 
 
   <!-- =============================================
-       MERIT SECTION
+       USP SECTION
        ============================================= -->
-  <section class="bg-brand-800 py-12 px-5" style="background-color: #1e3a8a;">
+  <section class="bg-white py-14 px-5">
     <div class="max-w-xl mx-auto">
-      <div class="fade-in text-center mb-8">
-        <h2 class="text-white text-xl font-bold">参画するメリット</h2>
+
+      <div class="fade-in text-center mb-10">
+        <span class="text-blue-600 text-sm font-semibold tracking-wider uppercase">Why PonTech Lab</span>
+        <h2 class="text-gray-900 text-xl font-bold mt-2">PonTech Lab が選ばれる3つの理由</h2>
       </div>
-      <ul class="fade-in space-y-4">
-        <li class="flex items-start gap-3 text-blue-100 text-sm leading-relaxed">
-          <span class="text-blue-300 text-lg mt-0.5 flex-shrink-0">✓</span>
-          <span><strong class="text-white">最先端の技術スタック</strong>——LLM・MLOps・ストリーミング処理など、市場価値が高い領域でハンズオン経験を積めます。</span>
-        </li>
-        <li class="flex items-start gap-3 text-blue-100 text-sm leading-relaxed">
-          <span class="text-blue-300 text-lg mt-0.5 flex-shrink-0">✓</span>
-          <span><strong class="text-white">スキルに見合った報酬設計</strong>——スキルシートと実績を正当に評価。副業・フリーランス歓迎。</span>
-        </li>
-        <li class="flex items-start gap-3 text-blue-100 text-sm leading-relaxed">
-          <span class="text-blue-300 text-lg mt-0.5 flex-shrink-0">✓</span>
-          <span><strong class="text-white">フルリモート・フレキシブル稼働</strong>——コアタイムなし。成果で評価される環境です。</span>
-        </li>
-        <li class="flex items-start gap-3 text-blue-100 text-sm leading-relaxed">
-          <span class="text-blue-300 text-lg mt-0.5 flex-shrink-0">✓</span>
-          <span><strong class="text-white">まずは面談から</strong>——ノルマなし・強引なクロージングなし。合わなければ断っていただいて構いません。</span>
-        </li>
-      </ul>
+
+      <div class="space-y-5">
+
+        <!-- USP 1 -->
+        <div class="fade-in rounded-2xl border border-gray-100 bg-gray-50 p-6">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-sm">
+              01
+            </div>
+            <div>
+              <h3 class="text-gray-900 font-bold text-base mb-2 leading-snug">
+                現場を知るリーダーが、エンジニアの「打席」を本気で探す
+              </h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                代表の三浦は防衛大卒・元陸上自衛官として熊本地震の災害派遣に従事し、退官後にAI・PM領域で実績を積んで2023年に株式会社PonTech Labを創業しました。「圧倒的速さでやり切る」をValueに掲げ、案件探しから参画後のフォローまで一気通貫でサポート。どんな困難な状況でも任務を完遂する責任感で、技術者が本当に力を発揮できる環境を届けます。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- USP 2 -->
+        <div class="fade-in rounded-2xl border border-gray-100 bg-gray-50 p-6">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-sm">
+              02
+            </div>
+            <div>
+              <h3 class="text-gray-900 font-bold text-base mb-2 leading-snug">
+                生成AI・MLOps 特化の厳選案件だけを紹介。「前処理だけ」の現場はお断り
+              </h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                「技術の恩恵を、あまねく、全ての組織へ」というビジョンのもと、PoC止まり・前処理ばかりの案件は紹介しません。生成AI・MLOps・データエンジニアリングに特化した知見で技術スタックとプロジェクトの本質を見極め、あなたのスキルが市場価値に直結する高単価・モダン環境の案件だけをご提案します。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- USP 3 -->
+        <div class="fade-in rounded-2xl border border-gray-100 bg-gray-50 p-6">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-sm">
+              03
+            </div>
+            <div>
+              <h3 class="text-gray-900 font-bold text-base mb-2 leading-snug">
+                強引なクロージングなし。「感謝と敬意」を行動原理にしたエンジニアファーストのカルチャー
+              </h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                「感謝と報恩」「敬意と貢献」をValueに掲げる弊社は、エンジニアへのリスペクトを最優先にしています。ノルマなし・押し売りなし。カジュアル面談でお話を聞いてみて、合わなければ遠慮なく断っていただいて構いません。挑戦するエンジニアの「伴走者」として、最適なタイミングで最適な案件をご提案します。
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -267,16 +285,15 @@
   <!-- =============================================
        FORM SECTION
        ============================================= -->
-  <section id="form" class="bg-white py-14 px-5">
+  <section id="form" class="bg-gray-50 py-14 px-5">
     <div class="max-w-xl mx-auto">
 
       <div class="fade-in text-center mb-8">
         <span class="text-blue-600 text-sm font-semibold tracking-wider uppercase">Contact</span>
         <h2 class="text-gray-900 text-xl font-bold mt-2">カジュアル面談のお申し込み</h2>
-        <p class="text-gray-500 text-sm mt-2">30秒で入力完了。担当者より2営業日以内にご連絡します。</p>
+        <p class="text-gray-500 text-sm mt-2">30秒で入力完了。まずは案件リストを覗くだけでもOKです。</p>
       </div>
 
-      <!-- フォーム本体 / サンクスメッセージを切り替えるコンテナ -->
       <div id="form-container" class="fade-in">
 
         <form id="contact-form" novalidate class="space-y-5">
@@ -293,7 +310,7 @@
               required
               autocomplete="name"
               placeholder="山田 太郎"
-              class="w-full border border-gray-300 rounded-xl px-4 py-3 text-base text-gray-800 placeholder-gray-400 transition-shadow duration-200"
+              class="w-full border border-gray-300 rounded-xl px-4 py-3 text-base text-gray-800 placeholder-gray-400 bg-white transition-shadow duration-200"
             />
             <p id="name-error" class="text-red-500 text-xs mt-1 hidden">お名前を入力してください。</p>
           </div>
@@ -311,43 +328,59 @@
               autocomplete="email"
               inputmode="email"
               placeholder="taro.yamada@example.com"
-              class="w-full border border-gray-300 rounded-xl px-4 py-3 text-base text-gray-800 placeholder-gray-400 transition-shadow duration-200"
+              class="w-full border border-gray-300 rounded-xl px-4 py-3 text-base text-gray-800 placeholder-gray-400 bg-white transition-shadow duration-200"
             />
             <p id="email-error" class="text-red-500 text-xs mt-1 hidden">正しいメールアドレスを入力してください。</p>
           </div>
 
-          <!-- 得意領域（チェックボックス・複数選択可） -->
+          <!-- 希望する働き方・単価 -->
           <div>
-            <p class="block text-sm font-semibold text-gray-700 mb-1">
-              得意な技術・領域 <span class="text-red-500">*</span>
-            </p>
-            <p class="text-gray-400 text-xs mb-2.5">複数選択できます</p>
-            <div class="space-y-2.5" id="skill-group">
-              <label class="skill-label flex items-center gap-3 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer transition-colors duration-150">
-                <input type="checkbox" name="skill" value="データサイエンス" class="w-4 h-4 flex-shrink-0 rounded" />
-                <span class="text-sm text-gray-700">データサイエンス</span>
-              </label>
-              <label class="skill-label flex items-center gap-3 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer transition-colors duration-150">
-                <input type="checkbox" name="skill" value="ML・MLOps" class="w-4 h-4 flex-shrink-0 rounded" />
-                <span class="text-sm text-gray-700">ML・MLOps</span>
-              </label>
-              <label class="skill-label flex items-center gap-3 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer transition-colors duration-150">
-                <input type="checkbox" name="skill" value="生成AI活用" class="w-4 h-4 flex-shrink-0 rounded" />
-                <span class="text-sm text-gray-700">生成AI活用</span>
-              </label>
-              <label class="skill-label flex items-center gap-3 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer transition-colors duration-150">
-                <input type="checkbox" name="skill" value="データ分析" class="w-4 h-4 flex-shrink-0 rounded" />
-                <span class="text-sm text-gray-700">データ分析</span>
-              </label>
-              <label class="skill-label flex items-center gap-3 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer transition-colors duration-150">
-                <input type="checkbox" name="skill" value="その他" class="w-4 h-4 flex-shrink-0 rounded" />
-                <span class="text-sm text-gray-700">その他</span>
-              </label>
+            <label for="work-style" class="block text-sm font-semibold text-gray-700 mb-1.5">
+              希望する働き方・単価
+              <span class="text-gray-400 font-normal text-xs ml-1">（任意）</span>
+            </label>
+            <div class="relative">
+              <select
+                id="work-style"
+                name="work_style"
+                class="w-full border border-gray-300 rounded-xl px-4 py-3 text-base text-gray-800 bg-white appearance-none transition-shadow duration-200 pr-10"
+              >
+                <option value="">選択してください</option>
+                <option value="フルリモート / 月額70万円以上">フルリモート / 月額70万円以上</option>
+                <option value="フルリモート / 月額90万円以上">フルリモート / 月額90万円以上</option>
+                <option value="フルリモート / 月額110万円以上">フルリモート / 月額110万円以上</option>
+                <option value="週1〜2出社可 / 月額70万円以上">週1〜2出社可 / 月額70万円以上</option>
+                <option value="週1〜2出社可 / 月額90万円以上">週1〜2出社可 / 月額90万円以上</option>
+                <option value="週1〜2出社可 / 月額110万円以上">週1〜2出社可 / 月額110万円以上</option>
+                <option value="出社・リモートこだわらない">出社・リモートこだわらない</option>
+                <option value="相談して決めたい">相談して決めたい</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
             </div>
-            <p id="skill-error" class="text-red-500 text-xs mt-1 hidden">得意な領域を1つ以上選択してください。</p>
           </div>
 
-          <!-- エラーメッセージ（サーバーエラー用） -->
+          <!-- ポートフォリオURL -->
+          <div>
+            <label for="portfolio" class="block text-sm font-semibold text-gray-700 mb-1.5">
+              GitHub / Qiita / Zenn 等のURL
+              <span class="text-gray-400 font-normal text-xs ml-1">（任意）</span>
+            </label>
+            <input
+              type="url"
+              id="portfolio"
+              name="portfolio"
+              autocomplete="off"
+              inputmode="url"
+              placeholder="https://github.com/username"
+              class="w-full border border-gray-300 rounded-xl px-4 py-3 text-base text-gray-800 placeholder-gray-400 bg-white transition-shadow duration-200"
+            />
+          </div>
+
+          <!-- サーバーエラー -->
           <p id="server-error" class="text-red-600 text-sm bg-red-50 border border-red-200 rounded-xl px-4 py-3 hidden">
             送信中にエラーが発生しました。しばらく経ってから再度お試しください。
           </p>
@@ -358,8 +391,7 @@
             id="submit-btn"
             class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold text-base py-4 rounded-xl shadow-md transition-colors duration-200 flex items-center justify-center gap-2"
           >
-            <span id="btn-text">まずはカジュアルに話を聞いてみる</span>
-            <!-- ローディングスピナー（送信中に表示） -->
+            <span id="btn-text">カジュアル面談を申し込む（30秒で完了）</span>
             <svg id="btn-spinner" class="hidden animate-spin w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"></path>
@@ -367,12 +399,12 @@
           </button>
 
           <p class="text-center text-gray-400 text-xs">
-            個人情報は採用目的のみに使用し、第三者への提供は行いません。
+            個人情報は採用・案件紹介の目的のみに使用し、第三者への提供は行いません。
           </p>
 
         </form>
 
-      </div><!-- /#form-container -->
+      </div>
     </div>
   </section>
 
@@ -380,8 +412,19 @@
   <!-- =============================================
        FOOTER
        ============================================= -->
-  <footer class="bg-gray-900 py-8 px-5 text-center">
-    <p class="text-gray-500 text-xs">&copy; 2026 PonTech Lab, Inc. All rights reserved.</p>
+  <footer class="bg-gray-900 py-10 px-5">
+    <div class="max-w-xl mx-auto text-center space-y-1.5">
+      <p class="text-gray-200 font-semibold text-sm">株式会社PonTech Lab</p>
+      <p class="text-gray-500 text-xs">〒206-0033 東京都多摩市落合1丁目46-1 ココリア多摩センター 7階</p>
+      <p class="text-gray-500 text-xs">代表取締役社長　三浦 紘弥　｜　設立 2023年10月19日</p>
+      <div class="flex justify-center gap-5 pt-3">
+        <a href="https://pon-tech.jp" target="_blank" rel="noopener" class="text-gray-500 hover:text-gray-300 text-xs transition-colors duration-150">
+          コーポレートサイト
+        </a>
+        <!-- プライバシーポリシーURL: pon-tech.jp のポリシーページURLが確定次第ここに追加してください -->
+      </div>
+      <p class="text-gray-600 text-xs pt-2">&copy; 2026 株式会社PonTech Lab. All rights reserved.</p>
+    </div>
   </footer>
 
 
@@ -391,11 +434,10 @@
   <script>
     // ========================================
     // ▼▼▼ GAS ウェブアプリURLをここに設定 ▼▼▼
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbwBdGQufxb9WVWBl-9K6nF_PQzDKWrsCzrMMa2t6WTkiJCIfkkRNjFne2HzOV03_OGb/exec";
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbySFDAqA6u6TPHu-ojXKybQf568ghnhgdAJOGJIcy70WWuJavUfvM2c4QPGjgRKWxyt/exec";
     // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
-    // ========================================
 
-    // --- Intersection Observer によるフェードインアニメーション ---
+    // Intersection Observer によるフェードインアニメーション
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -407,7 +449,7 @@
     }, { threshold: 0.12 });
     fadeEls.forEach((el) => observer.observe(el));
 
-    // --- フォーム送信処理 ---
+    // フォーム送信処理
     const form        = document.getElementById('contact-form');
     const submitBtn   = document.getElementById('submit-btn');
     const btnText     = document.getElementById('btn-text');
@@ -415,7 +457,6 @@
     const serverError = document.getElementById('server-error');
     const container   = document.getElementById('form-container');
 
-    // バリデーションヘルパー
     function showError(id, show) {
       document.getElementById(id).classList.toggle('hidden', !show);
     }
@@ -431,10 +472,6 @@
       showError('email-error', !emailOk);
       if (!emailOk) valid = false;
 
-      const skillOk = data.skill.length > 0;
-      showError('skill-error', !skillOk);
-      if (!skillOk) valid = false;
-
       return valid;
     }
 
@@ -442,19 +479,15 @@
       e.preventDefault();
       serverError.classList.add('hidden');
 
-      const nameEl  = document.getElementById('name');
-      const emailEl = document.getElementById('email');
-      const skillEls = [...document.querySelectorAll('input[name="skill"]:checked')];
-
       const payload = {
-        name:  nameEl.value,
-        email: emailEl.value,
-        skill: skillEls.map((el) => el.value).join('、'),
+        name:       document.getElementById('name').value,
+        email:      document.getElementById('email').value,
+        work_style: document.getElementById('work-style').value,
+        portfolio:  document.getElementById('portfolio').value,
       };
 
       if (!validateForm(payload)) return;
 
-      // 送信中UI
       submitBtn.disabled = true;
       btnText.textContent = '送信中...';
       btnSpinner.classList.remove('hidden');
@@ -463,13 +496,10 @@
         await fetch(GAS_URL, {
           method: 'POST',
           mode: 'no-cors', // GASはCORSヘッダーを返せないため no-cors を使用（レスポンスはopaque）
-          // text/plain にすることでプリフライト(OPTIONS)を回避。GAS側は e.postData.contents でJSON文字列として受け取る
-          headers: { 'Content-Type': 'text/plain' },
+          headers: { 'Content-Type': 'text/plain' }, // プリフライト(OPTIONS)を回避
           body: JSON.stringify(payload),
         });
-        // no-cors では res.ok が取れないため、例外なく完了したら成功扱い
 
-        // サンクス表示に切り替え
         container.innerHTML = `
           <div class="text-center py-10 px-4">
             <div class="flex justify-center mb-5">
@@ -490,17 +520,10 @@
       } catch (err) {
         console.error('送信エラー:', err);
         serverError.classList.remove('hidden');
-
-        // ボタンを元に戻す
         submitBtn.disabled = false;
-        btnText.textContent = 'まずはカジュアルに話を聞いてみる';
+        btnText.textContent = 'カジュアル面談を申し込む（30秒で完了）';
         btnSpinner.classList.add('hidden');
       }
-    });
-
-    // チェックボックス変更時にエラーを消す
-    document.getElementById('skill-group').addEventListener('change', () => {
-      showError('skill-error', false);
     });
   </script>
 
